@@ -5,7 +5,7 @@ Part of **ETC AI Platform** — workspace root `D:/AI-Platform/`.
 For session state + ecosystem rules, FIRST run from workspace root:
 
 - `node scripts/platform.mjs start --human` (ecosystem JSON state)
-- Read `D:/AI-Platform/CLAUDE.md` (rule_precedence, hard_rules R1-R7, write_locations, edit_flow)
+- Read `D:/AI-Platform/AGENTS.md` (rule_precedence, hard_rules R1-R7, write_locations, edit_flow)
 - Read `~/.claude/projects/D--AI-Platform/memory/MEMORY.md` (user preferences)
 
 This repo's role: MCP server (FastMCP Python, Docker image `o0mrblack0o/etc-platform` — image name retained per ECO-002 sub-decision for member backward-compat). Provides ~24 tools: Office rendering (DOCX/XLSX/PDF), KB query/save, DEDUP, template registry, schema validation. Endpoint: `localhost:8001/sse` (MCP SSE) + `localhost:8001/` (HTTP API). Consumers: ai-studio, ai-kit skills, `/generate-docs` pipeline.
