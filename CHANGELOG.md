@@ -7,6 +7,35 @@ versioning follows [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+## [6.0.0] — 2026-05-08
+
+### Removed (BREAKING)
+
+- **All SDLC scaffolding MCP tools removed** per ADR-005 (CLI-first). 11 tools previously in v3.2.0 (scaffold_workspace, scaffold_module, scaffold_feature, scaffold_hotfix, scaffold_app_or_service, resolve_path, update_state, verify_id_uniqueness, autofix, refactor_rename_module_slug, render_module_brief) deleted from MCP surface. SDLC ops now go through `ai-kit sdlc <verb>` CLI per CD-8.B.
+- Schema bundling for SDLC removed from MCP image. Schemas now live in ai-kit local assets (CD-10).
+
+### Changed
+
+- MCP tool count: 35 → 24 (Office rendering + KB + DEDUP + templates retained).
+- Image still tagged `o0mrblack0o/etc-platform` per ECO-002 sub-decision (member backward-compat — image name retained even though repo renamed `etc-docgen` → `ai-mcp`).
+
+### Migration
+
+- Skills/agents that called `mcp__etc-platform__scaffold_*`, `mcp__etc-platform__resolve_path`, `mcp__etc-platform__update_state`, `mcp__etc-platform__verify`, etc. → migrate to `Bash("ai-kit sdlc ...")` invocation.
+
+## [5.0.0] — 2026-05-07
+
+### Changed (BREAKING)
+
+- Image namespace rename `etc-docgen` → `etc-platform` (per ECO-002 pure ai-* naming on source repos). Docker image registry tag unchanged (`o0mrblack0o/etc-platform` retained for member backward-compat).
+- Repo renamed `etc-docgen` → `ai-mcp` in meta-repo `ecosystem.yaml`.
+
+## [4.0.0] — 2026-05-07
+
+### Removed
+
+- Legacy SDK bundles + obsolete test fixtures pre-ADR-005 SDLC cutover.
+
 ## [3.2.0] — 2026-05-06
 
 ### Added

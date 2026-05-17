@@ -7,7 +7,7 @@ description: Thin wrapper around etc-platform CLI. Orchestrate pipeline từ cod
 
 Skill này là **thin wrapper** gọi `etc-platform` CLI. Logic chính nằm trong Python package, không nhúng vào skill.
 
-**Prerequisites**: `pip install etc-platform` (hoặc `pip install -e D:/Projects/etc-platform`).
+**Prerequisites**: `pip install etc-platform` (or `pip install -e <path-to-ai-mcp-repo>` for maintainer dev).
 
 ---
 

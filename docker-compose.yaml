@@ -19,8 +19,8 @@ services:
     image: etc-platform:latest
     container_name: etc-platform
     ports:
-      # 8001 = unified platform port (post-merge with former etc-platform :8001)
-      # 8000 = back-compat alias during migration; remove after Claude skill update.
+      # 8001 = canonical MCP/HTTP port for ai-mcp (etc-platform Docker image)
+      # 8000 = back-compat alias (deprecated; remove after all clients pin :8001)
       - "8001:8000"
       - "8000:8000"
     volumes:
