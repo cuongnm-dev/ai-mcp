@@ -52,6 +52,7 @@ from etc_platform.registry.intel_cache import intel_cache_contribute_impl, intel
 from etc_platform.registry.kb import kb_query_impl, kb_save_impl
 from etc_platform.registry.outlines import outline_load_impl, outlines_list_impl
 from etc_platform.registry.templates_registry import template_load_impl, templates_list_impl
+from etc_platform.observability import install as _install_observability
 
 
 log = logging.getLogger("etc-platform.mcp")
@@ -114,6 +115,9 @@ mcp = FastMCP(
         "template_list, template_fork."
     ),
 )
+
+# Install observability hook — wraps call_tool + adds /observation/* routes (ECO-020).
+_install_observability(mcp)
 
 
 # ─────────────────────────── Path safety ───────────────────────────
